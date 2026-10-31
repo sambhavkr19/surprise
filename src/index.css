@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-hand {
+    font-family: 'Caveat', cursive;
+  }
+  .font-doodle {
+    font-family: 'Kalam', cursive;
+  }
+  .font-script {
+    font-family: 'Reenie Beanie', cursive;
+  }
+  .font-body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  
+  /* Paper and Scrapbook Textures */
+  .bg-paper-grid {
+    background-size: 24px 24px;
+    background-image: 
+      linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  }
+
+  .bg-paper-dots {
+    background-size: 20px 20px;
+    background-image: radial-gradient(circle, rgba(140, 120, 105, 0.15) 1px, transparent 1px);
+  }
+
+  .paper-shadow {
+    box-shadow: 
+      0 1px 3px rgba(60, 40, 20, 0.08),
+      0 10px 25px -5px rgba(60, 40, 20, 0.12),
+      0 0 0 1px rgba(60, 40, 20, 0.04);
+  }
+
+  .paper-shadow-lg {
+    box-shadow: 
+      0 2px 5px rgba(60, 40, 20, 0.06),
+      0 20px 35px -10px rgba(60, 40, 20, 0.18),
+      0 0 0 1px rgba(60, 40, 20, 0.05);
+  }
+
+  .polaroid-shadow {
+    box-shadow: 
+      0 4px 6px -1px rgba(0, 0, 0, 0.08),
+      0 14px 28px -6px rgba(45, 30, 20, 0.18),
+      0 0 0 1px rgba(0, 0, 0, 0.03);
+  }
+
+  /* Washi Tape Styles */
+  .washi-tape-pink {
+    background: repeating-linear-gradient(
+      45deg,
+      rgba(244, 194, 194, 0.85),
+      rgba(244, 194, 194, 0.85) 10px,
+      rgba(248, 215, 215, 0.85) 10px,
+      rgba(248, 215, 215, 0.85) 20px
+    );
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  }
+
+  .washi-tape-sage {
+    background: repeating-linear-gradient(
+      -45deg,
+      rgba(197, 217, 199, 0.85),
+      rgba(197, 217, 199, 0.85) 8px,
+      rgba(215, 230, 217, 0.85) 8px,
+      rgba(215, 230, 217, 0.85) 16px
+    );
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  }
+
+  .washi-tape-gold {
+    background: repeating-linear-gradient(
+      45deg,
+      rgba(246, 222, 179, 0.85),
+      rgba(246, 222, 179, 0.85) 6px,
+      rgba(252, 238, 209, 0.85) 6px,
+      rgba(252, 238, 209, 0.85) 12px
+    );
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(140, 120, 105, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(140, 120, 105, 0.4);
+}
