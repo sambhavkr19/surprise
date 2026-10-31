@@ -54,7 +54,7 @@ export default function App() {
       <div 
         className="fixed inset-0 pointer-events-none opacity-40 bg-cover bg-center mix-blend-multiply"
         style={{
-          backgroundImage: "url('/src/assets/images/scrapbook_paper_bg_1793448482032.jpg')",
+          backgroundImage: "url('/scrapbook_paper_bg.jpg')",
         }}
       />
       

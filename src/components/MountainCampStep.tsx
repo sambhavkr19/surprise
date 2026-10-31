@@ -85,8 +85,9 @@ export const MountainCampStep: React.FC<MountainCampStepProps> = ({ onNext }) =>
         <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-xl overflow-hidden border border-[#DCD0BE] shadow-inner bg-[#1A2535] group select-none">
           {/* Watercolor Mountain Art */}
           <img
-            src="/src/assets/images/mountain_camp_art_1793448482656.jpg"
+            src="/mountain_camp_art.jpg"
             alt="Cozy camping tent in mountains under starry sky"
+            loading="eager"
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
           />

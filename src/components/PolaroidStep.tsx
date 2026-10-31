@@ -101,59 +101,37 @@ export const PolaroidStep: React.FC<PolaroidStepProps> = ({ onNext }) => {
             <div>
               {/* Photo Viewport */}
               <div className="relative w-full aspect-square bg-[#F7F2E9] rounded-lg overflow-hidden border border-[#ECE2D0] flex flex-col items-center justify-center text-center group">
-                {photoUrl ? (
-                  <img
-                    src={photoUrl}
-                    alt="Annu's uploaded polaroid"
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <div className="p-6 flex flex-col items-center justify-center text-[#8C7A6B] h-full">
-                    {/* Cute hand-drawn camera illustration */}
-                    <div className="w-16 h-16 rounded-2xl bg-[#EFE4D6] flex items-center justify-center mb-3 text-[#B85B43] shadow-sm group-hover:scale-105 transition-transform">
-                      <Camera className="w-8 h-8" />
-                    </div>
-                    <span className="font-hand text-xl text-[#4A3E36] font-bold">
-                      Annu Ki Photo Ki Jagah ✨
-                    </span>
-                    <p className="text-xs text-[#8C7A6B] font-body mt-1 max-w-[200px] leading-relaxed">
-                      Annu ki sabse pyari ya sabse nautanki photo yahan daalo!
-                    </p>
-                    <button
-                      type="button"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        fileInputRef.current?.click();
-                      }}
-                      className="mt-3 py-1.5 px-3.5 bg-[#332C27] hover:bg-[#453B34] text-white rounded-lg text-xs font-medium flex items-center gap-1.5 shadow-sm transition-all"
-                    >
-                      <Upload className="w-3.5 h-3.5" /> Photo Chuno 📸
-                    </button>
-                  </div>
-                )}
+                <img
+                  src={photoUrl || '/annu_girl_portrait.jpg'}
+                  alt="Annu's portrait polaroid"
+                  loading="eager"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                />
 
-                {/* Photo Action Overlay (Change / Remove) */}
-                {photoUrl && (
-                  <div className="absolute bottom-2 right-2 flex items-center gap-1.5 bg-black/50 backdrop-blur-md p-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        fileInputRef.current?.click();
-                      }}
-                      className="p-1.5 text-white hover:text-yellow-200 transition-colors"
-                      title="Photo change karo"
-                    >
-                      <Upload className="w-3.5 h-3.5" />
-                    </button>
+                {/* Photo Action Overlay (Upload / Change) */}
+                <div className="absolute bottom-2 right-2 flex items-center gap-1.5 bg-black/60 backdrop-blur-md px-2 py-1 rounded-lg transition-opacity">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      fileInputRef.current?.click();
+                    }}
+                    className="flex items-center gap-1 text-[11px] text-white hover:text-yellow-200 transition-colors cursor-pointer"
+                    title={photoUrl ? "Photo change karo" : "Apni real photo upload karo"}
+                  >
+                    <Upload className="w-3.5 h-3.5" />
+                    <span>{photoUrl ? "Change" : "Upload Photo"}</span>
+                  </button>
+                  {photoUrl && (
                     <button
                       onClick={handleRemovePhoto}
-                      className="p-1.5 text-white hover:text-red-300 transition-colors"
-                      title="Photo hatao"
+                      className="p-1 text-white hover:text-red-300 transition-colors cursor-pointer"
+                      title="Default portrait par reset karo"
                     >
                       <Trash2 className="w-3.5 h-3.5" />
                     </button>
-                  </div>
-                )}
+                  )}
+                </div>
               </div>
 
               {/* Handwritten Captions Below Photo */}
