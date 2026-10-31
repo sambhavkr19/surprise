@@ -102,11 +102,11 @@ export const PolaroidStep: React.FC<PolaroidStepProps> = ({ onNext }) => {
               {/* Photo Viewport */}
               <div className="relative w-full aspect-square bg-[#F7F2E9] rounded-lg overflow-hidden border border-[#ECE2D0] flex flex-col items-center justify-center text-center group">
                 <img
-                  src={photoUrl || '/annu_girl_portrait.jpg'}
-                  alt="Annu's portrait polaroid"
+                  src={photoUrl || '/annu_photo.jpg'}
+                  alt="Annu's real photo polaroid"
                   loading="eager"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  className="w-full h-full object-cover object-[center_20%] transition-transform duration-500 group-hover:scale-[1.03]"
                 />
 
                 {/* Photo Action Overlay (Upload / Change) */}
